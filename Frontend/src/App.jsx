@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import RegisterPage from "./pages/RegisterPage";
+import VerifyPage from "./pages/VerifyPage";
 
-const App = () => {
+function App() {
   return (
-    <div>App</div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<RegisterPage />} />
+        <Route path="/verify/:token" element={<VerifyPage />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
